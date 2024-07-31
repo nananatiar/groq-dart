@@ -27,7 +27,7 @@ class GroqRequest {
   double topP;
   bool stream;
   String? stop;
-  Map<String, String> responseFormat;
+  Map<String, dynamic> responseFormat;
 
   GroqRequest({
     required this.messages,
@@ -53,7 +53,7 @@ class GroqRequest {
       topP: json['top_p'] as double,
       stream: json['stream'] as bool,
       stop: json['stop'] as String?,
-      responseFormat: Map<String, String>.from(json['response_format'] as Map),
+      responseFormat: Map<String, dynamic>.from(json['response_format'] as Map),
     );
   }
 
