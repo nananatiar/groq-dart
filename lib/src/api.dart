@@ -54,12 +54,16 @@ final class Configuration {
   /// like "[end]".
   final String? stop;
 
+  /// Response format
+  final Map<String, dynamic> responseFormat;
+
   Configuration({
     required this.model,
     this.temperature = 0.2,
     this.maxTokens = 4096,
     this.topP = 1.0,
     this.stream = false,
+    this.responseFormat = const {"type": "json_object"},
     this.stop,
   });
 }
