@@ -60,7 +60,6 @@ final class Configuration {
     this.maxTokens = 4096,
     this.topP = 1.0,
     this.stream = false,
-    this.response_format = {"type": "json_object"},
     this.stop,
   });
 }
