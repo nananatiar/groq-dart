@@ -8,7 +8,7 @@ enum GroqModel {
 }
 
 //
-// Type of massage roles
+// Type of message roles
 //
 enum RoleMessage {
   system,
@@ -27,6 +27,7 @@ class GroqRequest {
   double topP;
   bool stream;
   String? stop;
+  Map<String, String> responseFormat;
 
   GroqRequest({
     required this.messages,
@@ -36,6 +37,7 @@ class GroqRequest {
     required this.topP,
     required this.stream,
     required this.stop,
+    required this.responseFormat,
   });
 
   factory GroqRequest.fromJson(Map<String, dynamic> json) {
@@ -51,6 +53,7 @@ class GroqRequest {
       topP: json['top_p'] as double,
       stream: json['stream'] as bool,
       stop: json['stop'] as String?,
+      responseFormat: Map<String, String>.from(json['response_format'] as Map),
     );
   }
 
@@ -63,6 +66,7 @@ class GroqRequest {
       'top_p': topP,
       'stream': stream,
       'stop': stop,
+      'response_format': responseFormat,
     };
   }
 }
@@ -115,7 +119,7 @@ class GroqResponse {
 }
 
 //
-// The message object received or sended to or from Groq API
+// The message object received or sent to or from Groq API
 //
 class GroqMessage {
   RoleMessage role;
@@ -163,7 +167,7 @@ class GroqChoices {
 }
 
 //
-// The statistics recevied from Groq API with each response
+// The statistics received from Groq API with each response
 //
 class GroqUsage {
   int promptTokens;
