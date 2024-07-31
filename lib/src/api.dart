@@ -59,7 +59,7 @@ final class Configuration {
     this.temperature = 0.2,
     this.maxTokens = 4096,
     this.topP = 1.0,
-    this.stream = false
+    this.stream = false,
     this.response_format = {"type": "json_object"},
     this.stop,
   });
