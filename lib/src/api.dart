@@ -24,7 +24,7 @@ final class Configuration {
   String get modelName {
     switch (model) {
       case GroqModel.meta:
-        return 'llama2-70b-4096';
+        return 'llama3-groq-70b-8192-tool-use-preview';
       case GroqModel.mixtral:
         return 'mixtral-8x7b-32768';
       case GroqModel.gemma:
@@ -56,8 +56,8 @@ final class Configuration {
 
   Configuration({
     required this.model,
-    this.temperature = 0.5,
-    this.maxTokens = 1024,
+    this.temperature = 0.2,
+    this.maxTokens = 4096,
     this.topP = 1.0,
     this.stream = false,
     this.stop,
