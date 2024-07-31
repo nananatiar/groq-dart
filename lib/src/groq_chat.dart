@@ -65,6 +65,7 @@ class GroqChat {
       maxTokens: _configuration.maxTokens,
       topP: _configuration.topP,
       stream: _configuration.stream,
+      responseFormat: _configuration.responseFormat,
       stop: _configuration.stop,
     );
   }
